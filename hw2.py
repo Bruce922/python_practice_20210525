@@ -16,7 +16,29 @@ import pickle
 
 
 def calc_precision_and_recall(prediction, ground_truth):
-    pass
+    positive_clss_id=1
+    tp=0
+    fn=0
+    fp=0
+    tn=0
+    
+    for row_idx in range(len(prediction)):
+        for col_idx in range(prediction[row_idx]):
+            y_pred=prediction[row_idx][col_idx]
+            y_true=ground_turth[row_idx][col_idx]
+            if y_true != positive_clss_id:
+                if y_pred == positive_clss_id:
+                    fp+=1
+                else:
+                    tn+=1
+            else:
+                if y_pred==positive_clss_id:
+                    tp+=1
+                    else
+                    fn+=1
+                    
+                    
+               
 
 
 def main():
